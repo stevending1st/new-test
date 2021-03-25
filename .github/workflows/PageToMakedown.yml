@@ -14,4 +14,4 @@ jobs:
                 node-version: '14'
             - name: echo issue
               run:
-                issueTitle=${{github.event.issue.title}};issueBody=${{github.event.issue.body}};echo issueTitle issueBody
+                issueTitle=${{github.event.issue.title}};issueBody=${{github.event.issue.body}};echo issueTitle;echo issueBody
