@@ -1,5 +1,7 @@
 name: Page To Makedown
 on: 
+    issue:
+        types: [opened, edited]
     # push:
     #     branches:
     #         - main
