@@ -16,4 +16,4 @@ jobs:
               run:
                 # issueTitle="${{github.event.issue.title}}";
                 # issueBody="${{github.event.issue.body}}";
-                echo "${{github.event.issue.title}}" | node ./script/index.js;
+                node ./script/index.js "${{github.event.issue.body}}";
