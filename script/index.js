@@ -1,3 +1,4 @@
+
 // Get the URL of the article from command line parameters.
 const getThirdParam = () => {
   return new Promise((resolve, reject) =>{
@@ -13,5 +14,9 @@ const getThirdParam = () => {
 getThirdParam().then(
   (log)=>{
     console.log(log);
+  }
+).catch(
+  (err)=>{
+    console.log(err);
   }
 );
