@@ -1,6 +1,6 @@
 name: Page To Makedown
 on: 
-    issue:
+    issues:
         types: [opened, edited]
     # push:
     #     branches:
