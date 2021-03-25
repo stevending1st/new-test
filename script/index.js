@@ -10,8 +10,8 @@ const getThirdParam = () => {
   });
 };
 
-getThirdParam().then{
+getThirdParam().then(
   (log)=>{
     console.log(log);
   }
-};
+);
