@@ -1,10 +1,9 @@
-
 // Get the URL of the article from command line parameters.
 const getThirdParam = () => {
   return new Promise((resolve, reject) =>{
     const thirdParam = process.argv[2];
     if(typeof(thirdParam) === "undefined"){
-      reject(Err_DontGetThirdParam);
+      reject("ERR_HHH");
     } else {
       resolve(thirdParam);
     }
