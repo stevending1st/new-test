@@ -5,9 +5,9 @@ on:
 jobs:
     Lint:
         runs-on: ubuntu-latest
-        env:
-            DOCOMMITANDPUSH: false
         steps:
+            env:
+                DOCOMMITANDPUSH: false
             - name: Checkout
               uses: actions/checkout@v2
               with:
