@@ -16,6 +16,6 @@ jobs:
               run:
                 # issueTitle="${{github.event.issue.title}}";
                 # issueBody="${{github.event.issue.body}}";
-                pwd;
-                ls;
-                ./.github/scripts/runPageToMakedown.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
+                # pwd;
+                # ls;
+                bash ./.github/scripts/runPageToMakedown.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";

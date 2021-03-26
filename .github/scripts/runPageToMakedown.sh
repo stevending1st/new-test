@@ -1,3 +1,5 @@
+#!/bin/bash
+
 issueTitle="$1";
 issueBody="$2";
 
