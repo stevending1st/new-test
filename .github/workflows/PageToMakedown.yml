@@ -4,10 +4,14 @@ on:
         types: [opened, edited]
 jobs:
     Lint:
-        env:
-            DOCOMMITANDPUSH: false
+        # env:
+        #     DOCOMMITANDPUSH: false
         runs-on: ubuntu-latest
         steps:
+            - name: set env variables
+              run: |
+                echo "DOCOMMITANDPUSH=false" >> $GITHUB_ENV
+                echo ${{ env.DOCOMMITANDPUSH }}
             - name: Checkout
               uses: actions/checkout@v2
               with:
@@ -21,7 +25,8 @@ jobs:
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
                 # echo "##[set-env DOCOMMITANDPUSH=GOPATH;]true"
                 # env.DOCOMMITANDPUSH : true
-                DOCOMMITANDPUSH=true;
+                echo "DOCOMMITANDPUSH=false" >> $GITHUB_ENV
+                # DOCOMMITANDPUSH=true;
                 echo ${{ env.DOCOMMITANDPUSH }}
             - name: if
               if: env.DOCOMMITANDPUSH == true
