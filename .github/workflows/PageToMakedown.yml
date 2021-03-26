@@ -5,10 +5,10 @@ on:
 jobs:
     Lint:
         runs-on: ubuntu-latest
+        env:
+            DOCOMMITANDPUSH: false
         steps:
             - name: Checkout
-              env:
-                  DoCommitAndPush: false
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
@@ -16,11 +16,11 @@ jobs:
               uses: actions/setup-node@v2
               with:
                 node-version: '14.16.0'
-            - name: false DoCommitAndPush #echo issue
+            - name: false DOCOMMITANDPUSH #echo issue
               run:
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
-                echo true >> $DoCommitAndPush
+                echo true >> env.DOCOMMITANDPUSH
             - name: if
-              if: ${{ DoCommitAndPush }} == true
+              if: env.DOCOMMITANDPUSH == true
               run: 
-                echo "hello" ${{ DoCommitAndPush }}
+                echo "hello" env.DOCOMMITANDPUSH
