@@ -14,8 +14,4 @@ jobs:
                 node-version: '14.16.0'
             - name: echo issue
               run:
-                # issueTitle="${{github.event.issue.title}}";
-                # issueBody="${{github.event.issue.body}}";
-                # pwd;
-                # ls;
-                bash ./script/runPageToMakedown.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
+                bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
