@@ -19,7 +19,7 @@ jobs:
             - name: false DOCOMMITANDPUSH #echo issue
               run:
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
-                echo true >> env.DOCOMMITANDPUSH
+                env.DOCOMMITANDPUSH = true
             - name: if
               if: env.DOCOMMITANDPUSH == true
               run: 
