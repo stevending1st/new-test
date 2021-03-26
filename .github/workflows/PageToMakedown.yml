@@ -4,11 +4,11 @@ on:
         types: [opened, edited]
 jobs:
     Lint:
+        env:
+            DOCOMMITANDPUSH: false
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              env:
-                  DOCOMMITANDPUSH: false
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
