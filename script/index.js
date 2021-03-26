@@ -2,7 +2,7 @@
 const getThirdParam = () => {
   return new Promise((resolve, reject) =>{
     const thirdParam = process.argv[2];
-    console.log("thirdParam:", thirdParam);
+    // console.log("thirdParam:", thirdParam);
     if(typeof(thirdParam) === "undefined"){
       reject("ERR_HHH");
     } else {
