@@ -6,9 +6,9 @@ jobs:
     Lint:
         runs-on: ubuntu-latest
         steps:
-            env:
-                DOCOMMITANDPUSH: false
             - name: Checkout
+              env:
+                  DOCOMMITANDPUSH: false
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
