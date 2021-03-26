@@ -16,4 +16,5 @@ jobs:
               run:
                 # issueTitle="${{github.event.issue.title}}";
                 # issueBody="${{github.event.issue.body}}";
+                pwd;
                 ./script/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
