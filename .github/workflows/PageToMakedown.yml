@@ -18,4 +18,4 @@ jobs:
                 # issueBody="${{github.event.issue.body}}";
                 pwd;
                 ls;
-                ./script/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
+                ./.github/scripts/runPageToMakedown.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
