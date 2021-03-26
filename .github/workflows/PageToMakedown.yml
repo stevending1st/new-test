@@ -16,4 +16,4 @@ jobs:
               run:
                 # issueTitle="${{github.event.issue.title}}";
                 # issueBody="${{github.event.issue.body}}";
-                node ./script/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
+                ./script/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
