@@ -17,4 +17,5 @@ jobs:
                 # issueTitle="${{github.event.issue.title}}";
                 # issueBody="${{github.event.issue.body}}";
                 pwd;
+                ls;
                 ./script/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
