@@ -7,6 +7,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
+              env:
+                  DoCommitAndPush: false
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
@@ -17,8 +19,8 @@ jobs:
             - name: false DoCommitAndPush #echo issue
               run:
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
-                echo false >> $DoCommitAndPush
+                echo true >> $DoCommitAndPush
             - name: if
-              if: ${{ DoCommitAndPush }} == false
+              if: ${{ DoCommitAndPush }} == true
               run: 
                 echo "hello" ${{ DoCommitAndPush }}
