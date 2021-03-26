@@ -19,8 +19,9 @@ jobs:
             - name: false DOCOMMITANDPUSH #echo issue
               run:
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
-                echo "##[set-env DOCOMMITANDPUSH=GOPATH;]true"
+                # echo "##[set-env DOCOMMITANDPUSH=GOPATH;]true"
                 # env.DOCOMMITANDPUSH : true
+                echo DOCOMMITANDPUSH=true >> .env
             - name: if
               if: env.DOCOMMITANDPUSH == true
               run: 
