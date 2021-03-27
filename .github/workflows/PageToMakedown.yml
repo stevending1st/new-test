@@ -19,7 +19,7 @@ jobs:
             - name: set env
               run:
                   echo "DOCOMMITANDPUSH=false" >> $GITHUB_ENV;
-                  echo env.DOCOMMITANDPUSH;
+                  echo "DOCOMMITANDPUSH=true" >> $GITHUB_ENV;
             - name: if
               if: env.DOCOMMITANDPUSH == true
               run: 
