@@ -18,13 +18,13 @@ jobs:
             #     node-version: '14.16.0'
             - name: set env
               run:
-                  export DOCOMMITANDPUSH=true;
-                  echo $DOCOMMITANDPUSH;
-                  exit 1;
+                  echo "DOCOMMITANDPUSH=true" >> $GITHUB_ENV
+                  echo ${{ env.DOCOMMITANDPUSH }};
             - name: if
-              if: ${{ success() }}
+              if: ${{ env.DOCOMMITANDPUSH }} == true
               run: 
                 echo "hello" $env.DOCOMMITANDPUSH;
+                # export DOCOMMITANDPUSH=true;
                 # echo "DOCOMMITANDPUSH=true" >> $GITHUB_ENV;
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
                 # echo "##[set-env DOCOMMITANDPUSH=GOPATH;]true"
