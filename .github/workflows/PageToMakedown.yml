@@ -18,9 +18,7 @@ jobs:
                 node-version: '14.16.0'
             - name: false DOCOMMITANDPUSH #echo issue
               run:
-                env;
-                set;
-                env.DOCOMMITANDPUSH=true;
+                DOCOMMITANDPUSH=true;
                 echo ${{ env.DOCOMMITANDPUSH }};
             # - name: if
             #   if: env.DOCOMMITANDPUSH == true
