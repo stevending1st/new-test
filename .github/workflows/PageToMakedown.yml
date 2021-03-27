@@ -18,8 +18,8 @@ jobs:
             #     node-version: '14.16.0'
             - name: set env
               run:
-                  echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
                   echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
+                  echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
                   # echo ${{ env.DOCOMMITANDPUSH }};
             - name: if
               if: env.DOCOMMITANDPUSH == true
