@@ -20,7 +20,7 @@ jobs:
               run:
                   echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
                   echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
-                  echo ${{ env.DOCOMMITANDPUSH }};
+                  # echo ${{ env.DOCOMMITANDPUSH }};
             - name: if
               if: ${{ env.DOCOMMITANDPUSH }}==true
               run: 
