@@ -19,11 +19,11 @@ jobs:
             - name: set env
               run:
                   echo "DOCOMMITANDPUSH=true" >> $GITHUB_ENV;
-                  echo ${{ env.DOCOMMITANDPUSH }};
+                  echo $DOCOMMITANDPUSH;
             - name: if
-              if: ${{ env.DOCOMMITANDPUSH }} === true
+              if: ${{ env.DOCOMMITANDPUSH }} == true
               run: 
-                echo "hello" $env.DOCOMMITANDPUSH;
+                echo "hello" $DOCOMMITANDPUSH;
                 # export DOCOMMITANDPUSH=true;
                 # echo "DOCOMMITANDPUSH=true" >> $GITHUB_ENV;
                 # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
