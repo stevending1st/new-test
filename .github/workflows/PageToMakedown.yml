@@ -16,6 +16,7 @@ jobs:
                   node-version: '14.16.0'
             - name: Does the issue need to be converted to markdown
               run: |
+                  echo "github.event.issue:------${{ github.event.issue }}";
                   if [ "${{ github.event.issue.title }}" ] && [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[actions\]* ]]; then
                       echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
