@@ -35,10 +35,10 @@ jobs:
               if: env.DONEXT == 'true'
               run: node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
             - name: Commit and push
-              if: env.DONEXT == 'true'
+              if: env.DONEXT == 'true' && ${{ success() }}
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                  commit_message: "${{ github.event.issue.title }} #${{ github.event.issue.id }}"
+                  commit_message: "${{ github.event.issue }} (#${{ github.event.issue.id }})"
                   branch: main
                   file_pattern: chinese/articles/*.md
                   commit_user_name: PageToMarkdown Bot
