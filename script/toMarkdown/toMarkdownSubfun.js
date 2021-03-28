@@ -28,10 +28,11 @@ const getThirdParam = () => {
 };
 
 // Check the input parameters, and get the routing address of the article.
+// - 原文网址：[原文标题](https://www.freecodecamp.org/news/xxxxxxx/
 const getRouteAddr = (URL) => {
   // console.log(URL);
   return new Promise((resolve, reject) => {
-    const re = /https:\/\/www\.freecodecamp\.org\/news\/(?<articleFileName>[0-9a-zA-Z\-]+)\//g;
+    const re = /\-\s原文网址：\[*\]\(https:\/\/www\.freecodecamp\.org\/news\/(?<articleFileName>[0-9a-zA-Z\-]+)\//g;
     // const URLArr = URL.match(re);
     let URLArr = re.exec(URL);
     if(URLArr === null) {

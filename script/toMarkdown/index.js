@@ -1,4 +1,5 @@
 const https = require('https');
+const core = require('@actions/core');
 const nodeFetch = require("node-fetch");
 const {
   hostURL_EN,
@@ -29,6 +30,7 @@ const {
     writetoFile(articleText, articleFileName);
   } catch(e) {
     console.log("ERR:", e);
+    core.setFailed(e.message);
     return e;
   }
 })();
