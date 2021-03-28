@@ -14,26 +14,31 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: '14.16.0'
-            - name: Crawl pages and generate Markdown files
+            - name: Does the issue need to be converted to markdown
               run: |
                   if [ "${{ github.event.issue.title }}" ] && [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[actions\]* ]]; then
-                      node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
-                      echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
+                      echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                     else
                       echo "This issue does not need to generate a markdown file."
-                      echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
+                      echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                     fi;
                   else
                     echo "The content or title of the issue is empty."
-                    echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
+                    echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   fi;
               shell: bash
-            - name: if
-              if: env.DOCOMMITANDPUSH == 'true'
-              run: echo "hello" $DOCOMMITANDPUSH ${{ env.DOCOMMITANDPUSH }} DOCOMMITANDPUSH env.DOCOMMITANDPUSH ${{ true }} '${{ true }}' true;
-              shell:
-                  bash
+            - name: npm install
+              if: env.DONEXT == 'true'
+              run: npm install
+            - name: Crawl pages and generate Markdown files
+              if: env.DONEXT == 'true'
+              run: node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
+            - name: DO next
+              if: env.DONEXT == 'true'
+              run: echo "Git commit push";
+              # shell:
+              #     bash
                   # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
                   # echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
                   # echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
