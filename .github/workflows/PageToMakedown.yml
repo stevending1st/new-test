@@ -34,7 +34,10 @@ jobs:
               run: npm install
             - name: Crawl pages and generate Markdown files
               if: env.DONEXT == 'true'
-              run: node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
+              run: |
+                  echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
+                  node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
+                  echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
             - name: Commit and push
               if: env.DONEXT == 'true' && ${{ success() }}
               uses: stefanzweifel/git-auto-commit-action@v4
