@@ -42,11 +42,7 @@ jobs:
               if: env.DONEXT == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                  commit_message: "${{ github.event.issue }} (#${{ github.event.issue.id }})"
-                  branch: main
+                  commit_message: "${{ github.event.issue }}"
                   file_pattern: chinese/articles/*.md
                   commit_user_name: PageToMarkdown Bot
                   commit_user_email: PageToMarkdown-bot@freeCodeCamp.org
-                  # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
-                  # echo "DOCOMMITANDPUSH=${{ true }}" >> $GITHUB_ENV;
-                  # echo "DOCOMMITANDPUSH=${{ false }}" >> $GITHUB_ENV;
