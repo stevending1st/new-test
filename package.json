@@ -2,13 +2,13 @@
     "name": "news-translation",
     "version": "1.0.0",
     "license": "CC-BY-NC-SA-4.0",
-    "homepage": "https://github.com/freeCodeCamp/news-translation#readme",
+    "homepage": "https://github.com/stevending1st/new-test#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/freeCodeCamp/news-translation.git"
+        "url": "git+https://github.com/stevending1st/new-test.git"
     },
     "bugs": {
-        "url": "https://github.com/freeCodeCamp/news-translation/issues"
+        "url": "https://github.com/stevending1st/news-test/issues"
     },
     "dependencies": {
         "cheerio": "^1.0.0-rc.5",
