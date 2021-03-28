@@ -34,9 +34,16 @@ jobs:
             - name: Crawl pages and generate Markdown files
               if: env.DONEXT == 'true'
               run: node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
-            - name: DO next
+            - name: Commit and push
+              uses: stefanzweifel/git-auto-commit-action@v4
               if: env.DONEXT == 'true'
-              run: echo "Git commit push";
+              with:
+                  commit_message: "${{ github.event.issue.title }}" "#${{ github.event.issue.id }}"
+                  branch: main
+                  file_pattern: chinese/articles/*.md
+                  commit_user_name: PageToMarkdown Bot
+                  commit_user_email: PageToMarkdown-bot@freeCodeCamp.org
+              #"Git commit push";
               # shell:
               #     bash
                   # bash ./script/toMarkdown/main.sh "${{github.event.issue.title}}" "${{github.event.issue.body}}";
