@@ -35,8 +35,8 @@ jobs:
               if: env.DONEXT == 'true'
               run: node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
             - name: Commit and push
-              uses: stefanzweifel/git-auto-commit-action@v4
               if: env.DONEXT == 'true'
+              uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "${{ github.event.issue.title }}" "#${{ github.event.issue.id }}"
                   branch: main
