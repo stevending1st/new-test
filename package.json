@@ -11,6 +11,7 @@
         "url": "https://github.com/stevending1st/news-test/issues"
     },
     "dependencies": {
+        "@actions/core": "^1.2.6",
         "cheerio": "^1.0.0-rc.5",
         "node-fetch": "^2.6.1",
         "request": "^2.88.2",
