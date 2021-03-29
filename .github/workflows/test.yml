@@ -18,10 +18,10 @@ jobs:
               run: |
                   if [ "${{ github.event.issue.title }}" ] && [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[a\]* ]]; then
-                      echo "============OK============"
-                      node ./script/test/index.js "${{ github.event.issue.body }}"
+                      echo "============OK============";
+                      node ./script/test/index.js "${{ github.event.issue.body }}";
                     else
-                      echo "This issue does not need to generate a markdown file."
+                      echo "This issue does not need to generate a markdown file.";
                       echo "DONEXT=${{ false }}" }}" >> $GITHUB_ENV;
                     fi;
                   else

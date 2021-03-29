@@ -1,6 +1,5 @@
-let { exec } = require('child_process')
+let { exec } = require('child_process');
 
-const { getOuterHTML } = require("domutils");
 const {
   getThirdParam,
 } = require("./toMarkdownSubfun.js");
