@@ -12,14 +12,14 @@ let returnCode;
     if ( Number(thirdParam) % 2 === 1 ) {
       // console.log(true);
       // returnCode = true
-      let p1 = exec('echo "DONEXT=${{ true }}" >> $GITHUB_ENV;', function(err, stdout, stderr) {
+      let p1 = exec('echo "DONEXT=${{ true }}" >> $GITHUB_ENV; echo 1;', function(err, stdout, stderr) {
         console.log(stdout)
       });
       // console.log("1");
       // return true
     } else {
       // console.log(false);
-      let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV;', function(err, stdout, stderr) {
+      let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 2;', function(err, stdout, stderr) {
         console.log(stdout)
       });
       returnCode = false
@@ -29,7 +29,7 @@ let returnCode;
   } catch(e) {
     // console.log("ERR:", e);
     // returnCode = false
-    let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV;', function(err, stdout, stderr) {
+    let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 3;', function(err, stdout, stderr) {
       console.log(stdout)
     });
     console.log("3");
