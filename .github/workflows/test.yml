@@ -18,6 +18,7 @@ jobs:
               run: |
                   if [ "${{ github.event.issue.title }}" ] && [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[a\]* ]]; then
+                      echo "============OK============"
                       node ./script/test/index.js "${{ github.event.issue.body }}"
                     else
                       echo "This issue does not need to generate a markdown file."
