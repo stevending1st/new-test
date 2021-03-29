@@ -37,7 +37,7 @@ jobs:
                   echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
                   echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
-            - name: Git Auto Commit
+            - name: Commit and push
               if: env.DONEXT == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
