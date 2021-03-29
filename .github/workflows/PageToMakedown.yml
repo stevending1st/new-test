@@ -41,7 +41,7 @@ jobs:
               if: env.DONEXT == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                  commit_message: "${{ github.event.issue }}"
+                  commit_message: "${{ github.event.issue.title }}"
                   file_pattern: chinese/articles/*.md
                   commit_user_name: PageToMarkdown Bot
                   commit_user_email: PageToMarkdown-bot@freeCodeCamp.org
