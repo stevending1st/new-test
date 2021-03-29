@@ -45,4 +45,4 @@ jobs:
             - name: r
               if: env.DONEXT == 'true'
               run: |
-                  echo "ok";
+                  echo $DONEXT;

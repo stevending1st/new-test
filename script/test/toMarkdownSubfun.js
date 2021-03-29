@@ -32,7 +32,7 @@ const getThirdParam = () => {
 const getRouteAddr = (URL) => {
   // console.log(URL);
   return new Promise((resolve, reject) => {
-    const re = /原文网址：\[[0-9a-zA-Z\-\s]+\]\(https:\/\/www\.freecodecamp\.org\/news\/(?<articleFileName>[0-9a-zA-Z\-]+)\//g;
+    const re = /原文网址：\[[0-9a-zA-Z\-\s]+\]\(https:\/\/www\.freecodecamp\.org\/news\/(?<articleFileName>[0-9a-zA-Z\-]+)\//;
     // const URLArr = URL.match(re);
     let URLArr = re.exec(URL);
     if(URLArr === null) {
