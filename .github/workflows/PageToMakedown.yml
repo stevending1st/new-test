@@ -39,7 +39,7 @@ jobs:
                   echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
             - name: Git Auto Commit
               if: env.DONEXT == 'true'
-              uses: stefanzweifel/git-auto-commit-action@v4.9.2
+              uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "${{ github.event.issue }}"
                   file_pattern: chinese/articles/*.md
