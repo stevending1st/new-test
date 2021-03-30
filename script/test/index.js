@@ -4,38 +4,40 @@ const {
   getThirdParam,
 } = require("./toMarkdownSubfun.js");
 
-let returnCode;
+// let returnCode;
 
-(async function toMarkdown() {
-  try{
-    const thirdParam = await getThirdParam();
-    if ( Number(thirdParam) % 2 === 1 ) {
-      // console.log(true);
-      // returnCode = true
-      let p1 = exec('echo "DONEXT=${{ true }}" >> $GITHUB_ENV; echo 1;', function(err, stdout, stderr) {
-        console.log(stdout)
-      });
-      // console.log("1");
-      // return true
-    } else {
-      // console.log(false);
-      let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 2;', function(err, stdout, stderr) {
-        console.log(stdout)
-      });
-      returnCode = false
-      // console.log("2");
-      // return false
-    }
-  } catch(e) {
-    // console.log("ERR:", e);
-    // returnCode = false
-    let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 3;', function(err, stdout, stderr) {
-      console.log(stdout)
-    });
-    console.log("3");
-    // return false
-  }
-})();
+throw new Error('HHHHHHHHH Error!')
+
+// (async function toMarkdown() {
+//   try{
+//     const thirdParam = await getThirdParam();
+//     if ( Number(thirdParam) % 2 === 1 ) {
+//       // console.log(true);
+//       // returnCode = true
+//       let p1 = exec('echo "DONEXT=${{ true }}" >> $GITHUB_ENV; echo 1;', function(err, stdout, stderr) {
+//         console.log(stdout)
+//       });
+//       // console.log("1");
+//       // return true
+//     } else {
+//       // console.log(false);
+//       let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 2;', function(err, stdout, stderr) {
+//         console.log(stdout)
+//       });
+//       returnCode = false
+//       // console.log("2");
+//       // return false
+//     }
+//   } catch(e) {
+//     // console.log("ERR:", e);
+//     // returnCode = false
+//     let p1 = exec('echo "DONEXT=${{ false }}" >> $GITHUB_ENV; echo 3;', function(err, stdout, stderr) {
+//       console.log(stdout)
+//     });
+//     console.log("3");
+//     // return false
+//   }
+// })();
 
 // async function fn() {
 //   return false;
