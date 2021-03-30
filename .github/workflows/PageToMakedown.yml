@@ -20,12 +20,12 @@ jobs:
                     if [[ "${{ github.event.issue.title }}" =~ ^\[actions\]* ]]; then
                       echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                     else
-                      echo "This issue does not need to generate a markdown file."
+                      echo "This issue does not need to generate a markdown file." 1>&2
                       exit 1;
                       echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                     fi;
                   else
-                    echo "The content of the issue is empty."
+                    echo "The content of the issue is empty." 1>&2
                     exit 1;
                     echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   fi;
