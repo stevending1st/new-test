@@ -29,6 +29,6 @@ const {
     writetoFile(articleText, articleFileName);
   } catch(e) {
     console.log("ERR:", e);
-    throw new Error(e);
+    process.exitCode = 1;
   }
 })();
