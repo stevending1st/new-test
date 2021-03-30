@@ -30,6 +30,6 @@ const {
     writetoFile(articleText, articleFileName);
   } catch(e) {
     console.log("ERR:", e);
-    core.setFailed(e);
+    throw new Error(e);
   }
 })();
