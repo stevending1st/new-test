@@ -17,7 +17,7 @@ jobs:
             - name: Does the issue need to be converted to markdown
               run: |
                   echo "============1============";
-                  echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
+                  echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                   echo "============2============";
                   node ./script/test/index.js
                   echo "============3============";
