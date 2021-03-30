@@ -16,7 +16,7 @@ jobs:
                   node-version: '14.16.0'
             - name: Does the issue need to be converted to markdown
               run: |
-                  if [ "${{ github.event.issue.title }}" ] && [ "${{ github.event.issue.body }}" ]; then
+                  if [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[actions\]* ]]; then
                       echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                     else
@@ -24,7 +24,7 @@ jobs:
                       echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                     fi;
                   else
-                    echo "The content or title of the issue is empty."
+                    echo "The content of the issue is empty."
                     echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   fi;
               shell: bash
@@ -34,9 +34,7 @@ jobs:
             - name: Crawl pages and generate Markdown files
               if: env.DONEXT == 'true'
               run: |
-                  echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
-                  echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
             - name: Git Auto Commit
               if: env.DONEXT == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4.9.2
