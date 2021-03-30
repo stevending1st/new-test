@@ -21,10 +21,12 @@ jobs:
                       echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                     else
                       echo "This issue does not need to generate a markdown file."
+                      exit(1);
                       echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                     fi;
                   else
                     echo "The content of the issue is empty."
+                    exit(1);
                     echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   fi;
               shell: bash
