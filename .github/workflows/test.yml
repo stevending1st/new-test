@@ -54,6 +54,6 @@ jobs:
             #       commit_user_name: PageToMarkdown Bot
             #       commit_user_email: PageToMarkdown-bot@freeCodeCamp.org
             - name: r
-              if: env.DONEXT == 'true'
               run: |
                   echo $DONEXT;
+            # if: env.DONEXT == 'true'
