@@ -18,27 +18,21 @@ jobs:
               run: |
                   if [ "${{ github.event.issue.body }}" ]; then
                     if [[ "${{ github.event.issue.title }}" =~ ^\[actions\]* ]]; then
-                      echo "DONEXT=${{ true }}" >> $GITHUB_ENV;
                     else
                       echo "This issue does not need to generate a markdown file." 1>&2
                       exit 1;
-                      echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                     fi;
                   else
                     echo "The content of the issue is empty." 1>&2
                     exit 1;
-                    echo "DONEXT=${{ false }}" >> $GITHUB_ENV;
                   fi;
               shell: bash
             - name: npm install
-              if: env.DONEXT == 'true'
               run: npm install
             - name: Crawl pages and generate Markdown files
-              if: env.DONEXT == 'true'
               run: |
                   node ./script/toMarkdown/index.js "${{ github.event.issue.body }}";
             - name: Git Auto Commit
-              if: env.DONEXT == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4.9.2
               with:
                   commit_message: "${{ github.event.issue.title }}"
