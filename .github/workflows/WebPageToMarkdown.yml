@@ -8,8 +8,7 @@ jobs:
         steps:
             - name: Does the issue need to be converted to markdown
               run: |
-                  chmod a+x ${GITHUB_WORKSPACE}/script/toMarkdown/DoIssueContinue.sh;
-                  ${GITHUB_WORKSPACE}/script/toMarkdown/DoIssueContinue.sh;
+                  find -name DoIssueContinue.sh;
             - name: Checkout
               uses: actions/checkout@v2
               with:
