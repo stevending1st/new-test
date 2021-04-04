@@ -2,6 +2,7 @@ const https = require('https');
 const nodeFetch = require("node-fetch");
 const fsPromises = require('fs/promises');
 const {
+  Path_ArticleFolder_R,
   hostURL_EN,
   options
 } = require("./toMarkdownConstant.js");

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "hello" $0 $1 $2
+echo "hello";
 # if [ "$2" ]; then
 #   if [[ "$1" =~ ^\[Auto\]* ]]; then
 #     echo "Ok"
