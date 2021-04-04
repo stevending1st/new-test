@@ -2,7 +2,7 @@
 const Path_ArticleFolder_R = "./chinese/articles/";
 
 // Errs
-const Err_DontGetThirdParam = "No parameters were found. Please confirm that the article URL has been entered.";
+const Err_DontGetThirdParam = "No parameters were found. Please confirm that the description of the issue has been entered.";
 const Err_DontGetTrueRoute = "The route to the article is not matched. Please confirm that the URL is correct.";
 const Err_SameNameFile = "There is one file with the same name exists.Please check if the article has been added.";
 const Err_NoPath = "Path of options has no value.";
