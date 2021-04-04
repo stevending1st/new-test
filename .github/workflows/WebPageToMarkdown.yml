@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: Does the issue need to be converted to markdown
               run: |
-                  echo (ind -name DoIssueContinue.sh);
+                  echo (find -name DoIssueContinue.sh);
                   ./script/toMarkdown/DoIssueContinue.sh;
             - name: Checkout
               uses: actions/checkout@v2
