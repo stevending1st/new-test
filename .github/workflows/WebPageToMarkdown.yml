@@ -9,7 +9,6 @@ jobs:
             - name: Does the issue need to be converted to markdown
               run: |
                   bash ./script/toMarkdown/DoIssueContinue.sh "${{ github.event.issue.title }}" "${{ github.event.issue.body }}"
-              shell: bash
             - name: Checkout
               uses: actions/checkout@v2
               with:
