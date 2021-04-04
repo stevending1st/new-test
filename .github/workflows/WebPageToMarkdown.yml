@@ -1,14 +1,15 @@
 name: Web Page To Markdown
 on:
     issues:
-        types: [opened]
+        types: [opened, edited]
 jobs:
     WebPageToMarkdown:
         runs-on: ubuntu-latest
         steps:
             - name: Does the issue need to be converted to markdown
               run: |
-                  bash DoIssueContinue.sh "${{ github.event.issue.title }}" "${{ github.event.issue.body }}"
+                  pwd;
+                  find / -name DoIssueContinue.sh;
               working-directory: ./script/toMarkdown/
             - name: Checkout
               uses: actions/checkout@v2
