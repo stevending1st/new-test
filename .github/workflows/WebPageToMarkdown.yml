@@ -7,7 +7,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Does the issue need to be converted to markdown
-              working-directory: toMarkdown
               run: |
                   script/toMarkdown/DoIssueContinue.sh "${{ github.event.issue.title }}" "${{ github.event.issue.body }}";
             - name: Checkout
