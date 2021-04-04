@@ -10,7 +10,6 @@ jobs:
               run: |
                   pwd;
                   find / -name DoIssueContinue.sh;
-              working-directory: ./script/toMarkdown/
             - name: Checkout
               uses: actions/checkout@v2
               with:
