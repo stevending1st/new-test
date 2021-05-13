@@ -6,13 +6,13 @@ jobs:
     WebPageToMarkdown:
         runs-on: ubuntu-latest
         steps:
-            - name: Does the issue need to be converted to markdown
-              run: |
-                  ./script/tomarkdown/doissuecontinue.sh;
             - name: Checkout
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Does the issue need to be converted to markdown
+              run: |
+                  ./script/tomarkdown/doissuecontinue.sh;
             - name: Use Node.js
               uses: actions/setup-node@v2
               with:
